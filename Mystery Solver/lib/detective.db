@@ -1,0 +1,39 @@
+-- CREATE database
+DROP DATABASE IF EXISTS detective_db;
+CREATE DATABASE detective_db;
+USE detective_db;
+
+
+-- players table
+CREATE TABLE players(
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    name TEXT NOT NULL,
+    score INTEGER DEFAULT 0
+);
+
+-- case table
+CREATE TABLE cases(
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    title TEXT,
+    is_solved BOOLEAN DEFAULT FALSE
+);
+
+-- suspects table
+CREATE TABLE suspects(
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    description TEXT,
+    case_id INTEGER,
+    FOREIGN KEY(case_id) REFERENCES cases(id)
+);
+
+-- choices table
+CREATE TABLE choices(
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    description TEXT,
+    player_id INTEGER,
+    case_id INTEGER,
+    suspect_id INTEGER,
+    FOREIGN KEY(player_id) REFERENCES players(id),
+    FOREIGN KEY(case_id) REFERENCES cases(id),
+    FOREIGN KEY(suspect_id) REFERENCES suspects(id)
+);

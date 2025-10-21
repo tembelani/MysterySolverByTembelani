@@ -1,0 +1,18 @@
+/**
+These are the save Logs of the players
+*/
+
+Questioned Judah
+Accused Levi. Result: Incorrect
+Questioned Judah
+Accused Judah. Result: Correct
+Interrogated Levi
+Accused Judah. Verdict: True
+Interrogated Judah
+Interrogated Levi
+Accused Judah. Verdict: True
+Interrogated Reuben
+Interrogated Judah
+Interrogated Levi
+Interrogated Judah
+Detective Tembz accused Judah. Verdict: CORRECT
